@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"	
+    android:orientation="vertical">
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+android:scrollbars="vertical" 
+    android:scrollbarAlwaysDrawVerticalTrack="true"    >
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+	 android:weightSum="22.0" >
+    <TextView
+        android:id="@+id/textViewSelectMission"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="Store Modules"
+        android:textSize="@dimen/font_size_medium" />
+   <FrameLayout   android:id="@+id/interceptorEnclosure"
+        android:orientation="vertical"
+         android:layout_weight="2"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textEnclosure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:text="@string/hover_Enclosure_text"
+            android:padding="12dip" />
+  <Button
+      
+        android:id="@+id/buttonEnclosure"
+        android:layout_width="match_parent"
+        android:hint="@string/hover_Enclosure_text"
+        android:layout_height="match_parent"
+        android:text="Enclosure"
+        android:textSize="30sp" />
+      </FrameLayout>
+      
+       <FrameLayout   android:id="@+id/interceptorControl"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Control_text"
+            android:padding="12dip" />
+    <Button
+        android:id="@+id/buttonControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Control"
+        android:textSize="30sp" />
+
+      </FrameLayout>
+   <FrameLayout   android:id="@+id/interceptorThermal"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textThermal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Thermal_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonThermal"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Thermal"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+        <FrameLayout   android:id="@+id/interceptorPower"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Power_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonPower"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Power"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+        <FrameLayout   android:id="@+id/interceptorAgri"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textAgri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Agri_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonAgri"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Thermal"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+        <FrameLayout   android:id="@+id/interceptorIsru"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textIsru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Isru_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonIsru"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="ISRU"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+        <FrameLayout   android:id="@+id/interceptorCrew"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textCrew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Crew_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonCrew"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Crew"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+        <FrameLayout   android:id="@+id/interceptorFood"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Food_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonFood"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Food"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+
+ <FrameLayout   android:id="@+id/interceptorAir"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textAir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Air_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonAir"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Air"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+         <FrameLayout   android:id="@+id/interceptorLight"
+            android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+         <TextView
+            android:id="@+id/textLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hover_Light_text"
+            android:padding="12dip" />
+        <Button
+        android:id="@+id/buttonLight"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Light"
+        android:textSize="30sp" />
+  
+
+      </FrameLayout>
+ 
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

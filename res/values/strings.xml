@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HabSim</string>
+    <string name="notifications">Notification</string>
+      <string name="hover_Enclosure_text">Capsule, Inflatable, Airlock</string>
+    
+        <string name="hover_Control_text">Basic, Premium</string>
+    
+          <string name="hover_Thermal_text">Radiator</string>
+    <string name="hover_Power_text">RTG, PV Panel, Battery Pack</string>
+    
+        <string name="hover_Agri_text">Quail, Aquaponics, Seed Pack, Vermiculture, Rabbits, BSF Larvae</string>
+    
+          <string name="hover_Isru_text">Soil Kiln, Humidity Harvest</string>
+          <string name="hover_Crew_text">Man, Woman, Child</string>
+    
+        <string name="hover_Food_text">Solar Oven, Refrigerator</string>
+    
+          <string name="hover_Air_text">O2 Tank, CO2 Tank, Dehumidifer</string>
+           <string name="hover_Light_text">Mylar Mirror, LED</string>
+    <string name="notifications_setting">If set, a notifcation will be raised when needed.</string>
+</resources>

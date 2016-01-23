@@ -1,0 +1,43 @@
+<LinearLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_height="fill_parent"
+ android:layout_width="fill_parent"
+ android:orientation="vertical"
+ android:gravity="center_vertical"
+ android:weightSum="1.0">
+
+   
+  <Button
+        android:id="@+id/buttonLaunchNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_weight=".2"
+        android:text="Launch New Mission"
+        android:textSize="30sp" />
+    
+    <Button
+        android:id="@+id/buttonLoadMission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Mission"
+        android:layout_weight=".2"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonSettings"
+       android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLoadMission"
+        android:text="Settings"
+        android:layout_weight=".2"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonUpgrades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upgrades"
+         android:layout_weight=".2"
+        android:textSize="30sp" />
+   
+</LinearLayout>

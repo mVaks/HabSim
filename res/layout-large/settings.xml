@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <SeekBar
+        android:id="@+id/seekBarTimeAcceleration"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:max="10" />
+
+    <TextView
+        android:id="@+id/textViewTimeAcceleration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBarTimeAcceleration"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="14dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarDifficulty"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewTimeAcceleration"
+        android:layout_marginTop="26dp"
+        android:max="2" />
+
+    <TextView
+        android:id="@+id/textViewDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBarDifficulty"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="14dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarSound"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewDifficulty"
+        android:layout_marginTop="26dp"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/textViewSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBarSound"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="14dp" />
+   <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewSound"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/textViewNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textViewSound"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="14dp"
+        android:textSize="@dimen/font_size_large"
+        android:text="@string/notifications" />
+
+</RelativeLayout>
