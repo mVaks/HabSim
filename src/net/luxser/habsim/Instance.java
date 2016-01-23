@@ -22,7 +22,7 @@ public class Instance extends Activity{
 	private boolean Moon;
 	private boolean Mars;
 	 private TextView textEnclosure;
-	 private TextView textControl;
+	 private TextView textControl;	
 	 private TextView textThermal;
 	    private Button buttonEnclosure;
 	    private Button buttonControl;
@@ -45,6 +45,8 @@ public class Instance extends Activity{
 	    if ((!Luna && !Mars && !Moon)){
 			final Intent i = new Intent(Instance.this,LaunchNewActivity.class);
 	        startActivity(i);
+   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
 		}
 	    setContentView(R.layout.marssubsystems);
 	    
@@ -77,7 +79,7 @@ public class Instance extends Activity{
    @Override
    public void onClick(View arg0) {
 	   //if (event.getAction() == MotionEvent.ACTION_DOWN ) {
-		      //buttonEnclosure.setEnabled(false);
+		      buttonEnclosure.setEnabled(false);
 
     LayoutInflater layoutInflater 
      = (LayoutInflater)getBaseContext()

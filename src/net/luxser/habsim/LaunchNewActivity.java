@@ -50,6 +50,8 @@ public class LaunchNewActivity extends Activity {
 	      	    	Mars();
 	      	    	
 	   	        startActivity(i);
+	   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
 	      	     }
 	      	 }});
 	        buttonLuna.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +65,8 @@ public class LaunchNewActivity extends Activity {
 	     	    	final Intent i = new Intent(LaunchNewActivity.this,Instance.class);
 	     	    	Luna();
 	  	        startActivity(i);
+	   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
 	     	     }
 	     	     }});
 	        
@@ -80,6 +84,8 @@ public class LaunchNewActivity extends Activity {
 	     	    	
 	     	    	Moon();
 	  	        startActivity(i);
+	   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
 	     	     }
 	     	 }});
 	        
@@ -162,9 +168,11 @@ public class LaunchNewActivity extends Activity {
 	               .setNegativeButton("No", new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                        dialog.cancel();
-	                        final Intent i = new Intent(LaunchNewActivity.this,MainActivity.class);
+	                        //final Intent i = new Intent(LaunchNewActivity.this,MainActivity.class);
 	      	    			
-	                        startActivity(i);
+	                        //startActivity(i);
+	               	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
 	                   }
 	               });
 	        AlertDialog alert = builder.create();

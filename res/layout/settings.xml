@@ -26,18 +26,21 @@
           android:layout_weight=".2"
          android:max="2" />
 
-     <SeekBar
+     <ToggleButton
          android:id="@+id/seekBarSound"
          android:layout_width="match_parent"
          android:layout_height="0dp"
           android:layout_weight=".2"
-         android:max="100" />
+         />
      
     <CheckBox
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
           android:layout_weight=".2"/>
+
+ 
+
 </LinearLayout>
 
 <LinearLayout

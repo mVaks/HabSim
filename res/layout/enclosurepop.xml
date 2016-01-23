@@ -17,16 +17,17 @@
       android:orientation="vertical" 
       android:layout_margin="20dp">
       <TextView
-          android:layout_width="fill_parent"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="It's a PopupWindow" />
+          android:layout_gravity="center_horizontal"
+          android:text="Enclosure" />
       <ImageView
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
           android:src="@drawable/ic_launcher" />
       <Button
           android:id="@+id/dismiss"
-          android:layout_width="fill_parent"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Dismiss" />
       </LinearLayout>
