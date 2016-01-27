@@ -204,7 +204,7 @@ public class EnclosureActivity extends Activity {
 		       super.onDestroy();
 			    finish();
 			 }
-	 public void onBackButtonPressed(){
+	 public void onBackPressed(){
 		 final Intent i = new Intent(EnclosureActivity.this,Instance.class);
 	        startActivity(i);
 		    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
