@@ -72,6 +72,16 @@ protected void onCreate(Bundle savedInstanceState) {
   	      onDestroy();
      	     }
      	 });
+	    buttonPurchased.setOnClickListener(new View.OnClickListener() {
+    	     public void onClick(View v) {
+    	    	final Intent i = new Intent(FirstInstanceStore.this,ItemsActivity.class);
+    	        
+
+ 	        startActivity(i);
+ 	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+ 	      onDestroy();
+    	     }
+    	 });
 	    
 }
 @Override

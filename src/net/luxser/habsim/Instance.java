@@ -89,6 +89,33 @@ public class Instance extends Activity{
 	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	        onDestroy();
    }});
+        buttonControl.setOnClickListener(new Button.OnClickListener(){
+
+        	   @Override
+        	   public void onClick(View arg0) {
+        		   final Intent i = new Intent(Instance.this,ControlActivity.class);
+        	       startActivity(i);
+        		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+        		        onDestroy();
+        	   }});
+        buttonThermal.setOnClickListener(new Button.OnClickListener(){
+
+     	   @Override
+     	   public void onClick(View arg0) {
+     		   final Intent i = new Intent(Instance.this,ThermalActivity.class);
+     	       startActivity(i);
+     		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+     		        onDestroy();
+     	   }});
+        buttonPower.setOnClickListener(new Button.OnClickListener(){
+
+      	   @Override
+      	   public void onClick(View arg0) {
+      		   final Intent i = new Intent(Instance.this,PowerActivity.class);
+      	       startActivity(i);
+      		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+      		        onDestroy();
+      	   }});
 //	   //if (event.getAction() == MotionEvent.ACTION_DOWN ) {
 //		      buttonEnclosure.setEnabled(false);
 //

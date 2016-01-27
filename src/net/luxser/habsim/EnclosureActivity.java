@@ -77,13 +77,13 @@ public class EnclosureActivity extends Activity {
 						//SharedPreferences prefs = getSharedPreferences("Capsule", 0);//getPreferences(0);
 					    // capsule=prefs.getBoolean("Capsule",false);
 						//if(capsule == false)
-						info("Capsule", "Cost: $1,000,000 \nMass: 10,000 kg\nDescription: \n",1000000,10000);
+						info("Capsule", "Cost: $1,000,000 \nMass: 10,000 kg\nDescription: \nSlots: 10",1000000,10000);
 						//else{
 							//Toast.makeText(getBaseContext(), "Module already purchased or unavaliable",Toast.LENGTH_SHORT).show();
 						//}
 					}
 					else if(position == 1){
-						info("Inflatable", "Cost: $2,000,000 \nMass: 15,000 kg\nDescription: \n",2000000,15000);
+						info("Inflatable", "Cost: $2,000,000 \nMass: 15,000 kg\nDescription: \nSlots: 20",2000000,15000);
 					}
 					else if(position ==2){
 						info("Airlock", "Cost: $500,000 \nMass: 5,000 kg\nDescription: \n",500000,5000);

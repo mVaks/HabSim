@@ -154,6 +154,36 @@ public class LaunchNewActivity extends Activity {
 	    	editor8.putBoolean("Airlock", false);
 	    	editor8.commit(); //important, otherwise it wouldn't save.
 	    	
+	    	prefs = getSharedPreferences("Basic", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor9 = prefs.edit();
+	    	editor9.putBoolean("Basic", false);
+	    	editor9.commit(); //important, otherwise it wouldn't save.
+	    	
+	    	prefs = getSharedPreferences("Premium", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor10 = prefs.edit();
+	    	editor10.putBoolean("Premium", false);
+	    	editor10.commit(); //important, otherwise it wouldn't save.
+
+	    	prefs = getSharedPreferences("Radiator", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor11 = prefs.edit();
+	    	editor11.putBoolean("Radiator", false);
+	    	editor11.commit(); //important, otherwise it wouldn't save.
+	    	
+	    	prefs = getSharedPreferences("RTG", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor12 = prefs.edit();
+	    	editor12.putBoolean("RTG", false);
+	    	editor12.commit(); //important, otherwise it wouldn't save.
+	    	
+	    	prefs = getSharedPreferences("PV Panel", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor13 = prefs.edit();
+	    	editor13.putBoolean("PV Panel", false);
+	    	editor13.commit(); //important, otherwise it wouldn't save.
+	    	
+	    	prefs = getSharedPreferences("Battery Pack", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor14 = prefs.edit();
+	    	editor14.putBoolean("Battery Pack", false);
+	    	editor14.commit(); //important, otherwise it wouldn't save.
+	    	
 	    }
 	    public void Moon(){
 	    	SharedPreferences prefs = getSharedPreferences("Moon", Context.MODE_PRIVATE);

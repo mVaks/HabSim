@@ -46,12 +46,12 @@ public class MainActivity extends Activity {
      	 });
         buttonSettings.setOnClickListener(new View.OnClickListener() {
      	     public void onClick(View v) {
-     	    	final Intent i = new Intent(MainActivity.this,SettingsActivity.class);
-       	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+     	    //	final Intent i = new Intent(MainActivity.this,SettingsActivity.class);
+       	       // overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
-  	        startActivity(i);
-   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-   	     onDestroy();
+  	        //startActivity(i);
+   	       // overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+   	    // onDestroy();
      	     }
      	 });
         buttonUpgrades.setOnClickListener(new View.OnClickListener() {
