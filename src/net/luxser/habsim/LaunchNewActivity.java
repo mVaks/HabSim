@@ -12,10 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class LaunchNewActivity extends Activity {
-	private int confirmed;
 	int x;
 	private boolean Luna;
-	private TextView mission;
 	private boolean Moon;
 	private boolean Mars;
 	 private Button buttonMars;
@@ -26,7 +24,6 @@ public class LaunchNewActivity extends Activity {
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.launchnew);
-	        confirmed = 0;
 	        SharedPreferences prefs = getSharedPreferences("Mars", 0);//getPreferences(0); 
  		     Mars = prefs.getBoolean("Mars", false);
  		     prefs = getSharedPreferences("Moon", 0);//getPreferences(0); 
@@ -46,12 +43,12 @@ public class LaunchNewActivity extends Activity {
 	      	    		 
 	      	    	 }
 	      	    	 else{
-	      	    	final Intent i = new Intent(LaunchNewActivity.this,Instance.class);
+	      	    	final Intent i = new Intent(LaunchNewActivity.this,FirstInstanceStore.class);
 	      	    	Mars();
 	      	    	
 	   	        startActivity(i);
 	   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+	   	     onDestroy();
 	      	     }
 	      	 }});
 	        buttonLuna.setOnClickListener(new View.OnClickListener() {
@@ -62,11 +59,11 @@ public class LaunchNewActivity extends Activity {
 	      	    		
 	      	    	 }
 	     	    	else{
-	     	    	final Intent i = new Intent(LaunchNewActivity.this,Instance.class);
+	     	    	final Intent i = new Intent(LaunchNewActivity.this,FirstInstanceStore.class);
 	     	    	Luna();
 	  	        startActivity(i);
 	   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+	   	     onDestroy();
 	     	     }
 	     	     }});
 	        
@@ -80,12 +77,12 @@ public class LaunchNewActivity extends Activity {
 	      	    		
 	      	    	 }
 	     	    	else{
-	     	    		final Intent i = new Intent(LaunchNewActivity.this,Instance.class);
+	     	    		final Intent i = new Intent(LaunchNewActivity.this,FirstInstanceStore.class);
 	     	    	
 	     	    	Moon();
 	  	        startActivity(i);
 	   	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+	   	     onDestroy();
 	     	     }
 	     	 }});
 	        
@@ -107,8 +104,8 @@ public class LaunchNewActivity extends Activity {
 	    	SharedPreferences.Editor editor3 = prefs.edit();
 	    	editor3.putBoolean("Moon", false);
 	    	editor3.commit(); //important, otherwise it wouldn't save.
-		   
-		
+	    	
+	    	refreshVariables();
 	    }
 	    public void Luna(){
 	    	SharedPreferences prefs = getSharedPreferences("Luna", Context.MODE_PRIVATE);
@@ -125,7 +122,38 @@ public class LaunchNewActivity extends Activity {
 	    	SharedPreferences.Editor editor3 = prefs.edit();
 	    	editor3.putBoolean("Moon", false);
 	    	editor3.commit(); //important, otherwise it wouldn't save.
-		    
+	    	
+	    	
+	    	refreshVariables();
+	    }
+	    public void refreshVariables(){
+	    	SharedPreferences prefs = getSharedPreferences("Money", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor4 = prefs.edit();
+	    	editor4.putInt("Money", 3000000);
+	    	editor4.commit(); //important, otherwise it wouldn't save.
+		   
+	    	prefs = getSharedPreferences("Mass", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor5 = prefs.edit();
+	    	editor5.putInt("Mass", 30000);
+	    	editor5.commit(); //important, otherwise it wouldn't save.
+	    	
+	    	prefs = getSharedPreferences("Capsule", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor6 = prefs.edit();
+	    	editor6.putBoolean("Capsule", false);
+	    	editor6.commit(); //important, otherwise it wouldn't save.
+	    	
+
+	    	prefs = getSharedPreferences("Inflatable", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor7 = prefs.edit();
+	    	editor7.putBoolean("Inflatable", false);
+	    	editor7.commit(); //important, otherwise it wouldn't save.
+	    	
+
+	    	prefs = getSharedPreferences("Airlock", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor8 = prefs.edit();
+	    	editor8.putBoolean("Airlock", false);
+	    	editor8.commit(); //important, otherwise it wouldn't save.
+	    	
 	    }
 	    public void Moon(){
 	    	SharedPreferences prefs = getSharedPreferences("Moon", Context.MODE_PRIVATE);
@@ -142,17 +170,18 @@ public class LaunchNewActivity extends Activity {
 	    	SharedPreferences.Editor editor3 = prefs.edit();
 	    	editor3.putBoolean("Mars", false);
 	    	editor3.commit(); //important, otherwise it wouldn't save.
+	    	refreshVariables();
 		    
 	    }
 	    public void confirmation(){
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	        builder.setMessage("Are you sure you want to start a new mission?")
+	        builder.setMessage("Are you sure you want to override the existing mission?")
 	        		.setTitle("Confirmation")
 	        		.setIcon(android.R.drawable.ic_dialog_alert)
 	               .setCancelable(false)
 	               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
-	                	   final Intent i = new Intent(LaunchNewActivity.this,Instance.class);
+	                	   final Intent i = new Intent(LaunchNewActivity.this,FirstInstanceStore.class);
 	                	   if(x==1){
 	      	    				Mars();
 	      	    			}
@@ -163,6 +192,8 @@ public class LaunchNewActivity extends Activity {
 	      	    				Moon();
 	      	    			}
 	   	  	        startActivity(i);
+	   	  	   overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	   	  	onDestroy();
 	                   }
 	               })
 	               .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -172,10 +203,27 @@ public class LaunchNewActivity extends Activity {
 	      	    			
 	                        //startActivity(i);
 	               	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+	               	        
 	                   }
 	               });
 	        AlertDialog alert = builder.create();
 	        alert.show();
 	    }
+	    @Override
+		public void onBackPressed() {
+			final Intent i = new Intent(LaunchNewActivity.this,MainActivity.class);
+	        startActivity(i);
+		    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+		    onDestroy();
+		}
+	    
+	    public void onDestroy() {
+	    	
+	    	
+	    	  buttonMars = null;
+	    	    buttonLuna = null;
+	    	   buttonMoon = null;
+	           super.onDestroy();
+	    	    finish();
+	    	 }
 	}

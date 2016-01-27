@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+   
+    android:orientation="vertical" >
+<TextView
+               android:id="@+id/textMoney"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Money Left: "
+               android:textSize="@dimen/font_size_medium"
+               android:padding="3dp"
+               android:paddingTop="20dip" />
+               
+
+     <TextView
+              			android:layout_gravity="bottom"
+         
+               android:id="@+id/textMass"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="@dimen/font_size_medium"
+               android:text="Mass Left: "
+               android:padding="3dp"/>
+  
+
+        
+
+            <Gallery
+                android:layout_alignParentLeft="true"
+                android:id="@+id/gallery1"
+                android:layout_gravity="top"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                />
+            
+             
+			
+
+</LinearLayout>

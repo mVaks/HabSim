@@ -1,6 +1,7 @@
 package net.luxser.habsim;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -185,6 +186,12 @@ public class SettingsActivity extends Activity {
                  textViewTimeAcceleration = (TextView) findViewById(R.id.textViewTimeAcceleration);
              }
 
-       
+             @Override
+     		public void onBackPressed() {
+     			final Intent i = new Intent(SettingsActivity.this,MainActivity.class);
+     	        startActivity(i);
+     		    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+
+     		}
     }
 

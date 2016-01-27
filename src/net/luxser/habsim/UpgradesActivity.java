@@ -1,6 +1,7 @@
 package net.luxser.habsim;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -16,5 +17,11 @@ public class UpgradesActivity extends Activity {
         setContentView(R.layout.activity_main);
         
     }
+    @Override
+		public void onBackPressed() {
+			final Intent i = new Intent(UpgradesActivity.this,MainActivity.class);
+	        startActivity(i);
+		    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
+		}
 }

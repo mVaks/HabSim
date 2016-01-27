@@ -13,11 +13,12 @@ public class MainActivity extends Activity {
     private Button buttonLoadMission;
     private Button buttonSettings;
     private Button buttonUpgrades;
+    private MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.makingwater);
+        mp = MediaPlayer.create(MainActivity.this, R.raw.makingwater);
         mp.start();
         buttonLaunchNew = (Button) findViewById(R.id.buttonLaunchNew);
         buttonLoadMission = (Button) findViewById(R.id.buttonLoadMission);
@@ -32,15 +33,15 @@ public class MainActivity extends Activity {
 
    	        startActivity(i);
    	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+   	     onDestroy();
       	     }
       	 });
         buttonLoadMission.setOnClickListener(new View.OnClickListener() {
      	     public void onClick(View v) {
-     	    	final Intent i = new Intent(MainActivity.this,Instance.class);
+     	    	final Intent i = new Intent(MainActivity.this,FirstInstanceStore.class);
   	        startActivity(i);
    	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+   	     onDestroy();
      	     }
      	 });
         buttonSettings.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,7 @@ public class MainActivity extends Activity {
 
   	        startActivity(i);
    	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
+   	     onDestroy();
      	     }
      	 });
         buttonUpgrades.setOnClickListener(new View.OnClickListener() {
@@ -62,4 +63,21 @@ public class MainActivity extends Activity {
      	     }
      	 });
     }
+    @Override
+    public void onBackPressed() {
+    }
+    
+    public void onDestroy() {
+    	  buttonLaunchNew = null;
+          buttonLoadMission = null;
+          buttonSettings = null;
+          buttonUpgrades = null;
+    	  if (mp != null){
+    	   mp.stop();
+           mp.release();
+           mp = null;
+    	  }
+           super.onDestroy();
+    	    finish();
+    	 }
 }
