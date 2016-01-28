@@ -86,7 +86,7 @@ public class CrewActivity extends Activity {
 						info("Woman", "Cost: $0 \nMass: 50 kg\nDescription: ",0,50);
 					}
 					else if(position ==2){
-						info("Child", "Cost: $9 \nMass: 15 kg\nDescription: \n",0,15);
+						info("Child", "Cost: $0 \nMass: 15 kg\nDescription: \n",0,15);
 					}
 					 //display the images selected
 					//ImageView imageView = (ImageView) findViewById(R.id.image1);
