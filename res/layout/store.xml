@@ -23,7 +23,7 @@ android:scrollbars="vertical"
                android:layout_width="fill_parent"
                android:layout_height="50dp"
                android:text="Pre-Launch"
-               android:textSize="30sp" />
+               android:textSize="@dimen/font_size_large" />
      <FrameLayout   
         android:orientation="vertical"
          android:layout_weight="1"

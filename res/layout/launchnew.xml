@@ -12,7 +12,7 @@
         android:layout_weight=".2"
         android:gravity="center_vertical|center_horizontal|center"
         android:text="Select Mission: "
-        android:textSize="@dimen/font_size_medium" />
+        android:textSize="@dimen/font_size_large" />
    
   <Button
         android:id="@+id/buttonMars"

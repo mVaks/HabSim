@@ -121,9 +121,9 @@ public class ThermalActivity extends Activity {
 		}
 	}
 	 public void info(String item, String message, int cost, int mass){
-		 SharedPreferences prefs = getSharedPreferences(item, 0);//getPreferences(0);
-	     boolean x=prefs.getBoolean(item,false);
-		if(x == false){
+		 //SharedPreferences prefs = getSharedPreferences(item, 0);//getPreferences(0);
+	     //boolean x=prefs.getBoolean(item,false);
+		
 		 costMass = mass;
 		 costMoney = cost;
 		 currentItem = item;
@@ -138,10 +138,10 @@ public class ThermalActivity extends Activity {
 	            }
 	        }).create().show();
 		 
-		}
-		else{
-			Toast.makeText(getBaseContext(), "Module already purchased or unavaliable",Toast.LENGTH_SHORT).show();
-		}
+		
+		//else{
+		//	Toast.makeText(getBaseContext(), "Module already purchased or unavaliable",Toast.LENGTH_SHORT).show();
+		//}
 	    }
 	 public void purchased(int cost, int mass){
 		 if(currentMass - mass >= 0 && currentMoney - cost >=0){
@@ -159,9 +159,13 @@ public class ThermalActivity extends Activity {
 	    	currentMass = currentMass - mass;
 	    	costMass = 0;
 	    	
+	    	prefs = getSharedPreferences(currentItem, 0);//getPreferences(0); 
+		    int y = prefs.getInt(currentItem, 0);
+		    y+=1;
+
 	    	prefs = getSharedPreferences(currentItem, Context.MODE_PRIVATE);
 	    	SharedPreferences.Editor editor6 = prefs.edit();
-	    	editor6.putBoolean(currentItem, true);
+	    		    	editor6.putInt(currentItem, y);
 	    	editor6.commit(); //important, otherwise it wouldn't save.
 	    	
 	    	resetText();

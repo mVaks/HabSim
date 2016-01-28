@@ -12,15 +12,15 @@ import android.widget.Toast;
 public class ItemsActivity extends Activity {
 	
 	private TextView textItems;
-	private boolean Capsule;
-	private boolean Inflatable;
-	private boolean Airlock;
-	private boolean Basic;
-	private boolean Premium;
-	private boolean Radiator;
-	private boolean RTG;
-	private boolean PV_Panel;
-	private boolean Battery_Pack;
+	private int Capsule;
+	private int Inflatable;
+	private int Airlock;
+	private int Basic;
+	private int Premium;
+	private int Radiator;
+	private int RTG;
+	private int PV_Panel;
+	private int Battery_Pack;
 
 
     @Override
@@ -37,32 +37,32 @@ public class ItemsActivity extends Activity {
         RTG = returnSaved("RTG");
         PV_Panel = returnSaved("PV Panel");
         Battery_Pack = returnSaved("Battery Pack");
-       if(Capsule){
-    	   addToText("Capsule\n");
+       if(Capsule > 0){
+    	   addToText(Capsule + "x Capsule\n");
        }
-       if(Inflatable){
-    	   addToText("Inflatable\n");
+       if(Inflatable >0){
+    	   addToText(Inflatable + "x Inflatable\n");
        }
-       if(Airlock){
-    	   addToText("Airlock\n");
+       if(Airlock>0){
+    	   addToText(Airlock + "x Airlock\n");
        }
-       if(Basic){
-    	   addToText("Basic\n");
+       if(Basic>0){
+    	   addToText(Basic + "x Basic\n");
        }
-       if(Premium){
-    	   addToText("Premium\n");
+       if(Premium>0){
+    	   addToText(Premium + "x Premium\n");
        }
-       if(Radiator){
-    	   addToText("Radiator\n");
+       if(Radiator>0){
+    	   addToText(Radiator + "x Radiator\n");
        }
-       if(RTG){
-    	   addToText("RTG\n");
+       if(RTG>0){
+    	   addToText(RTG + "x RTG\n");
        }
-       if(PV_Panel){
-    	   addToText("PV Panel\n");
+       if(PV_Panel>0){
+    	   addToText(PV_Panel + "x PV Panel\n");
        }
-       if(Battery_Pack){
-    	   addToText("Battery Pack\n");
+       if(Battery_Pack>0){
+    	   addToText(Battery_Pack + "x Battery Pack\n");
        }
     }
     @Override
@@ -72,9 +72,9 @@ public class ItemsActivity extends Activity {
 		    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
 		}
-    public boolean returnSaved(String x){
+    public int returnSaved(String x){
     	 SharedPreferences prefs = getSharedPreferences(x, 0);//getPreferences(0); 
-	     boolean y = prefs.getBoolean(x, false);
+	     int y = prefs.getInt(x, 0);
 	    return y;
     }
     public void addToText(String y){
