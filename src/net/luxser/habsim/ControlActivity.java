@@ -133,7 +133,12 @@ public class ControlActivity extends Activity {
 		 new AlertDialog.Builder(this)
 	        .setTitle(item)
 	        .setMessage(message)
-	        .setNegativeButton("Exit", null)
+	        .setNegativeButton("Remove", new OnClickListener() {
+
+	            public void onClick(DialogInterface arg0, int arg1) {
+	            	sell(costMoney, costMass);
+	            }
+	        })
 	        .setPositiveButton("Purchase", new OnClickListener() {
 
 	            public void onClick(DialogInterface arg0, int arg1) {
@@ -146,6 +151,37 @@ public class ControlActivity extends Activity {
 		//	Toast.makeText(getBaseContext(), "Module already purchased or unavaliable",Toast.LENGTH_SHORT).show();
 		//}
 	    }
+	 public void sell(int cost, int mass){
+		 SharedPreferences prefs = getSharedPreferences(currentItem, 0);//getPreferences(0); 
+		    int y = prefs.getInt(currentItem, 0);
+		    if(y>0){
+		    	 y-=1;
+
+			    	prefs = getSharedPreferences(currentItem, Context.MODE_PRIVATE);
+			    	SharedPreferences.Editor editor6 = prefs.edit();
+			    		    	editor6.putInt(currentItem, y);
+			    	editor6.commit();
+			    	
+			    	 prefs = getSharedPreferences("Money", Context.MODE_PRIVATE);
+			    	SharedPreferences.Editor editor4 = prefs.edit();
+			    	editor4.putInt("Money", currentMoney+cost);
+			    	editor4.commit(); //important, otherwise it wouldn't save.
+			    	currentMoney = currentMoney+cost;
+			    	costMoney = 0;
+				   
+			    	prefs = getSharedPreferences("Mass", Context.MODE_PRIVATE);
+			    	SharedPreferences.Editor editor5 = prefs.edit();
+			    	editor5.putInt("Mass", currentMass+mass);
+			    	editor5.commit(); //important, otherwise it wouldn't save.
+			    	currentMass = currentMass + mass;
+			    	costMass = 0;
+			    	
+			    	resetText();
+		    }
+		    else{
+				 Toast.makeText(getBaseContext(), "No modules to remove",Toast.LENGTH_SHORT).show();
+		    }
+	 }
 	 public void purchased(int cost, int mass){
 		 if(currentMass - mass >= 0 && currentMoney - cost >=0){
 		 SharedPreferences prefs = getSharedPreferences("Money", Context.MODE_PRIVATE);
