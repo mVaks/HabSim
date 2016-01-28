@@ -43,6 +43,7 @@ public class AgriActivity extends Activity {
 	R.drawable.indian,
 	R.drawable.indian,
 	R.drawable.indian,
+	R.drawable.indian,
 	};
 	public void run() {
 		

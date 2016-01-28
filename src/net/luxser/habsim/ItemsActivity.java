@@ -24,6 +24,25 @@ public class ItemsActivity extends Activity {
 	private int RTG;
 	private int PV_Panel;
 	private int Battery_Pack;
+	private int Quail;
+	private int Aquaponics;
+	private int Seed_Pack;
+	private int Vermiculture;
+	private int Rabbits;
+	private int BSF_Larvae;
+	private int Soil_kiln;
+	private int Humidity_Harvester;
+	private int Man;
+	private int Woman;
+	private int Child;
+	private int Solar_Oven;
+	private int Refrigerator;
+	private int O2_tank;
+	private int CO2_tank;
+	private int Dehumidifier;
+	private int Mylar_Mirror;
+	private int LED;
+
 	
     public void addText(){
     	Capsule = returnSaved("Capsule");
@@ -35,6 +54,25 @@ public class ItemsActivity extends Activity {
         RTG = returnSaved("RTG");
         PV_Panel = returnSaved("PV Panel");
         Battery_Pack = returnSaved("Battery Pack");
+        Quail= returnSaved("Quail");
+        Aquaponics= returnSaved("Aquaponics");
+        Seed_Pack= returnSaved("Seed Pack");
+        Vermiculture= returnSaved("Vermiculture");
+        Rabbits= returnSaved("Rabbits");
+        BSF_Larvae= returnSaved("BSF Larvae");
+        Soil_kiln= returnSaved("Soil kiln");
+        Humidity_Harvester= returnSaved("Humidity Harvester");
+        Man= returnSaved("Man");
+        Woman= returnSaved("Woman");
+        Child= returnSaved("Child");
+        Solar_Oven= returnSaved("Solar Oven");
+        Refrigerator= returnSaved("Refrigerator");
+        O2_tank= returnSaved("O2 tank");
+        CO2_tank= returnSaved("CO2 tank");
+        Dehumidifier= returnSaved("Dehumidifier");
+        Mylar_Mirror= returnSaved("Mylar Mirror");
+        LED= returnSaved("LED");
+
        if(Capsule > 0){
     	   addToText(Capsule + "x Capsule\n");
        }
@@ -61,7 +99,65 @@ public class ItemsActivity extends Activity {
        }
        if(Battery_Pack>0){
     	   addToText(Battery_Pack + "x Battery Pack\n");
+       }  
+       
+       if(Quail > 0){
+    	   addToText(Quail + "x Quail\n");
        }
+       if(Aquaponics>0){
+    	   addToText(Aquaponics + "x Aquaponics\n");
+       }
+       if(Seed_Pack>0){
+    	   addToText(Seed_Pack + "x Seed Pack\n");
+       }
+       if(Vermiculture>0){
+    	   addToText(Vermiculture + "x Vermiculture\n");
+       }
+       if(Rabbits>0){
+    	   addToText(Rabbits + "x Rabbits\n");
+       }
+       if(BSF_Larvae>0){
+    	   addToText(BSF_Larvae + "x BSF Larvae\n");
+       }
+       if(Soil_kiln>0){
+    	   addToText(Soil_kiln + "x Soil kiln\n");
+       }
+       if(Humidity_Harvester>0){
+    	   addToText(Humidity_Harvester + "x Humidity Harvester\n");
+       }
+       if(Man>0){
+    	   addToText(Man + "x Man\n");
+       }
+       if(Woman>0){
+    	   addToText(Woman + "x Woman\n");
+       }
+       if(Child>0){
+    	   addToText(Child + "x Child\n");
+       }
+       if(Solar_Oven>0){
+    	   addToText(Solar_Oven + "x Solar Oven\n");
+       }
+       if(Refrigerator>0){
+    	   addToText(Refrigerator + "x Refrigerator\n");
+       }
+       if(O2_tank>0){
+    	   addToText(O2_tank + "x O2 tank\n");
+       }
+       if(CO2_tank>0){
+    	   addToText(CO2_tank + "x CO2 tank\n");
+       }
+       if(Dehumidifier>0){
+    	   addToText(Dehumidifier + "x Dehumidifier\n");
+       }
+       if(Mylar_Mirror>0){
+    	   addToText(Mylar_Mirror + "x Mylar Mirror\n");
+       }
+       if(LED>0){
+    	   addToText(LED + "x LED\n");
+       }
+  	  
+  	 
+  	 
     }
 
     @Override
