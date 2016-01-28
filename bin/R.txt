@@ -447,7 +447,7 @@ int id buttonCrew 0x7f0a0070
 int id buttonEnclosure 0x7f0a005e
 int id buttonFood 0x7f0a0073
 int id buttonIsru 0x7f0a006d
-int id buttonLaunch 0x7f0a0093
+int id buttonLaunch 0x7f0a0094
 int id buttonLaunchNew 0x7f0a004f
 int id buttonLight 0x7f0a0079
 int id buttonLoadMission 0x7f0a0050
@@ -457,6 +457,7 @@ int id buttonMoon 0x7f0a005b
 int id buttonPanel 0x7f0a0036
 int id buttonPower 0x7f0a0067
 int id buttonPurchased 0x7f0a0092
+int id buttonReset 0x7f0a0093
 int id buttonSettings 0x7f0a0051
 int id buttonStore 0x7f0a0091
 int id buttonThermal 0x7f0a0064

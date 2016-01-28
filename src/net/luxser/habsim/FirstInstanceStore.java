@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class FirstInstanceStore extends Activity {
 	private Button buttonStore;
     private Button buttonLaunch;
     private Button buttonPurchased;
+    private Button buttonReset;
 	
 protected void onCreate(Bundle savedInstanceState) {
 		
@@ -83,6 +85,31 @@ protected void onCreate(Bundle savedInstanceState) {
     	     }
     	 });
 	    
+	    buttonReset = (Button) findViewById(R.id.buttonReset);
+
+	       buttonReset.setOnClickListener(new View.OnClickListener() {
+	     	     public void onClick(View v) {
+	     	    	createSaved("Money",3000000);
+	    	    	createSaved("Mass",30000);
+	    	    	
+	    	    	createSaved("Capsule",0);
+	    	    	createSaved("Inflatable",0);
+	    	    	createSaved("Airlock",0);
+	    	    	createSaved("Basic",0);
+	    	    	createSaved("Premium",0);
+	    	    	createSaved("Radiator",0);
+	    	    	createSaved("RTG",0);
+	    	    	createSaved("PV Panel",0);
+	    	    	createSaved("Battery Pack",0);
+	    	    	SharedPreferences prefs = getSharedPreferences("Money", 0);//getPreferences(0);
+	    	        textMoney.setText("Money Left:  $" + NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Money",0)));
+	    	        
+	    	        prefs = getSharedPreferences("Mass", 0);//getPreferences(0);
+	    	        textMass.setText("Mass Left:  " +  NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Mass", 0)) + " kg");
+
+	     	     }
+	       });
+	    
 }
 @Override
 public void onBackPressed() {
@@ -105,9 +132,16 @@ public void onDestroy() {
 	textMass = null;
 	
 	 buttonStore = null;
+	 buttonReset = null;
 	 buttonLaunch = null;
 	 buttonPurchased = null;
        super.onDestroy();
 	    finish();
 	 }
+public void createSaved(String name, int value){
+	SharedPreferences prefs = getSharedPreferences(name, Context.MODE_PRIVATE);
+	SharedPreferences.Editor editor = prefs.edit();
+	editor.putInt(name, value);
+	editor.commit();
+}
 }

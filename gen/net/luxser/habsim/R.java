@@ -1962,7 +1962,7 @@ containing a value of this type.
         public static final int buttonEnclosure=0x7f0a005e;
         public static final int buttonFood=0x7f0a0073;
         public static final int buttonIsru=0x7f0a006d;
-        public static final int buttonLaunch=0x7f0a0093;
+        public static final int buttonLaunch=0x7f0a0094;
         public static final int buttonLaunchNew=0x7f0a004f;
         public static final int buttonLight=0x7f0a0079;
         public static final int buttonLoadMission=0x7f0a0050;
@@ -1972,6 +1972,7 @@ containing a value of this type.
         public static final int buttonPanel=0x7f0a0036;
         public static final int buttonPower=0x7f0a0067;
         public static final int buttonPurchased=0x7f0a0092;
+        public static final int buttonReset=0x7f0a0093;
         public static final int buttonSettings=0x7f0a0051;
         public static final int buttonStore=0x7f0a0091;
         public static final int buttonThermal=0x7f0a0064;
