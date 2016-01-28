@@ -33,6 +33,32 @@
             android:name=".SettingsActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+        android:name=".AgriActivity"
+        android:label="@string/app_name" >
+        </activity>
+        <activity
+        android:name=".IsruActivity"
+        android:label="@string/app_name" >
+        </activity>
+        <activity
+        android:name=".CrewActivity"
+        android:label="@string/app_name" >
+        </activity>
+        <activity
+        android:name=".FoodActivity"
+        android:label="@string/app_name" >
+        </activity>
+        <activity
+        android:name=".AirActivity"
+        android:label="@string/app_name" >
+        </activity>
+        <activity
+        android:name=".LightActivity"
+        android:label="@string/app_name" >
+        </activity>
+
+        
          <activity
             android:name=".ItemsActivity"
             android:label="@string/app_name" >

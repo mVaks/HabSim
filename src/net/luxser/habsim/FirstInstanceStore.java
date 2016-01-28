@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 public class FirstInstanceStore extends Activity {
 	
+	private boolean confirmReset;
+	
 	private boolean Luna;
 	private boolean Moon;
 	private boolean Mars;
@@ -89,6 +91,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 	       buttonReset.setOnClickListener(new View.OnClickListener() {
 	     	     public void onClick(View v) {
+	     	    	 if (confirmReset()){
 	     	    	createSaved("Money",3000000);
 	    	    	createSaved("Mass",30000);
 	    	    	
@@ -106,18 +109,33 @@ protected void onCreate(Bundle savedInstanceState) {
 	    	        
 	    	        prefs = getSharedPreferences("Mass", 0);//getPreferences(0);
 	    	        textMass.setText("Mass Left:  " +  NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Mass", 0)) + " kg");
-
+	     	    	 }
 	     	     }
 	       });
 	    
+}
+public boolean confirmReset(){
+	confirmReset = false;
+	new AlertDialog.Builder(this)
+    .setTitle("Confirm Reset")
+    .setMessage("Are you sure you want to remove all purchases?")
+    .setNegativeButton("NO", null)
+    .setPositiveButton("YES", new OnClickListener() {
+
+        public void onClick(DialogInterface arg0, int arg1) {
+        	confirmReset = true;
+        }
+       
+    }).create().show();
+	return confirmReset;
 }
 @Override
 public void onBackPressed() {
     new AlertDialog.Builder(this)
         .setTitle("Really Exit?")
         .setMessage("Are you sure you want to exit?")
-        .setNegativeButton(android.R.string.no, null)
-        .setPositiveButton(android.R.string.yes, new OnClickListener() {
+        .setNegativeButton("NO", null)
+        .setPositiveButton("YES", new OnClickListener() {
 
             public void onClick(DialogInterface arg0, int arg1) {
             	final Intent i = new Intent(FirstInstanceStore.this,MainActivity.class);

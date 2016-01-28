@@ -116,6 +116,61 @@ public class Instance extends Activity{
       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
       		        onDestroy();
       	   }});
+        buttonAgri.setOnClickListener(new Button.OnClickListener(){
+
+       	   @Override
+       	   public void onClick(View arg0) {
+       		   final Intent i = new Intent(Instance.this,AgriActivity.class);
+       	       startActivity(i);
+       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+       		        onDestroy();
+       	   }});
+        buttonIsru.setOnClickListener(new Button.OnClickListener(){
+
+       	   @Override
+       	   public void onClick(View arg0) {
+       		   final Intent i = new Intent(Instance.this,IsruActivity.class);
+       	       startActivity(i);
+       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+       		        onDestroy();
+       	   }});
+        buttonCrew.setOnClickListener(new Button.OnClickListener(){
+
+       	   @Override
+       	   public void onClick(View arg0) {
+       		   final Intent i = new Intent(Instance.this,CrewActivity.class);
+       	       startActivity(i);
+       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+       		        onDestroy();
+       	   }});
+        buttonFood.setOnClickListener(new Button.OnClickListener(){
+
+       	   @Override
+       	   public void onClick(View arg0) {
+       		   final Intent i = new Intent(Instance.this,FoodActivity.class);
+       	       startActivity(i);
+       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+       		        onDestroy();
+       	   }});
+        buttonAir.setOnClickListener(new Button.OnClickListener(){
+
+       	   @Override
+       	   public void onClick(View arg0) {
+       		   final Intent i = new Intent(Instance.this,AirActivity.class);
+       	       startActivity(i);
+       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+       		        onDestroy();
+       	   }});
+        buttonLight.setOnClickListener(new Button.OnClickListener(){
+
+       	   @Override
+       	   public void onClick(View arg0) {
+       		   final Intent i = new Intent(Instance.this, LightActivity.class);
+       	       startActivity(i);
+       		        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+       		        onDestroy();
+       	   }});
+        
 //	   //if (event.getAction() == MotionEvent.ACTION_DOWN ) {
 //		      buttonEnclosure.setEnabled(false);
 //

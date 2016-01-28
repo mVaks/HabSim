@@ -108,18 +108,43 @@ public class LaunchNewActivity extends Activity {
 	    	createSaved("Money",3000000);
 	    	createSaved("Mass",30000);
 	    	
+	    	//enclosure
 	    	createSaved("Capsule",0);
 	    	createSaved("Inflatable",0);
 	    	createSaved("Airlock",0);
+	    	//control
 	    	createSaved("Basic",0);
 	    	createSaved("Premium",0);
+	    	//thermal
 	    	createSaved("Radiator",0);
+	    	//power
 	    	createSaved("RTG",0);
 	    	createSaved("PV Panel",0);
 	    	createSaved("Battery Pack",0);
-	    	
-	    	
-	    	
+	    	//agri
+	    	createSaved("Quail",0);
+	    	createSaved("Aquaponics",0);
+	    	createSaved("Seed Pack",0);
+	    	createSaved("Vermiculture",0);
+	    	createSaved("Rabbits",0);
+	    	createSaved("BSF Larvae",0);
+	    	//ISRU
+	    	createSaved("Soil kiln",0);
+	    	createSaved("Humidity Harvester",0);
+	    	//Crew
+	    	createSaved("Man",0);
+	    	createSaved("Woman",0);
+	    	createSaved("Child",0);
+	    	//Food
+	    	createSaved("Solar Oven",0);
+	    	createSaved("Refrigerator",0);
+	    	//Air
+	    	createSaved("O2 tank",0);
+	    	createSaved("CO2 tank",0);
+	    	createSaved("Dehumidifier",0);
+	    	//Light
+	    	createSaved("Mylar Mirror",0);
+	    	createSaved("LED",0);
 
 	    	
 	    }
