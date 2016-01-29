@@ -145,6 +145,9 @@ public class LaunchNewActivity extends Activity {
 	    	//Light
 	    	createSaved("Mylar Mirror",0);
 	    	createSaved("LED",0);
+	    	
+	    	createSaved("savedX", 0);
+	    	createSaved("savedY", 0);
 
 	    	
 	    }

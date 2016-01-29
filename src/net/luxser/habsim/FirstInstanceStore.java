@@ -34,6 +34,8 @@ public class FirstInstanceStore extends Activity {
 protected void onCreate(Bundle savedInstanceState) {
 		
 	    super.onCreate(savedInstanceState);
+	    
+	    
 	   
 	    SharedPreferences prefs = getSharedPreferences("Mars", 0);//getPreferences(0); 
 	     Mars = prefs.getBoolean("Mars", false);
@@ -49,6 +51,12 @@ protected void onCreate(Bundle savedInstanceState) {
    	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
 		}
+	    
+	     prefs = getSharedPreferences("firstTime", Context.MODE_PRIVATE);
+    	SharedPreferences.Editor editor4 = prefs.edit();
+    	editor4.putBoolean("firstTime", true);
+    	editor4.commit(); //important, otherwise it wouldn't save.
+    	
 	    setContentView(R.layout.store);
 
 	    buttonStore = (Button)findViewById(R.id.buttonStore);
@@ -153,6 +161,10 @@ public void onDestroy() {
 	 buttonReset = null;
 	 buttonLaunch = null;
 	 buttonPurchased = null;
+	 
+	
+	 
+	 
        super.onDestroy();
 	    finish();
 	 }

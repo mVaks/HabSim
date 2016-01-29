@@ -5,15 +5,21 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 
@@ -34,18 +40,41 @@ public class Instance extends Activity{
 	    private Button buttonAir;
 	    private Button buttonLight;
 	    
-	    private FrameLayout interceptorEnclosure;
-	  
+	    private ScrollView layout;
+	    
+	    private int sViewX;
+	    
+	    private int sViewY;
+	    
+	    private boolean firstTime;
+	 
+	   
 	@SuppressLint("NewApi") @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 	    super.onCreate(savedInstanceState);
 	   
 	   
-
+  
 	    setContentView(R.layout.marssubsystems);
-	    
-	    
+	    SharedPreferences prefs = getSharedPreferences("firstTime", 0);//getPreferences(0);
+	    firstTime=prefs.getBoolean("firstTime",false);
+	    layout = (ScrollView)findViewById(R.id.layoutTrack);
+	    if (!firstTime){
+	    prefs = getSharedPreferences("savedX", 0);//getPreferences(0);
+	    sViewX=prefs.getInt("savedX",0);
+	    prefs = getSharedPreferences("savedY", 0);//getPreferences(0);
+	    sViewY=prefs.getInt("savedY",0);
+
+	    layout.post(new Runnable() {
+	        @Override
+	        public void run() {
+	        	layout.scrollTo(sViewX, sViewY);
+	        } 
+	    });
+	    }
+
+
 	    buttonEnclosure = (Button)findViewById(R.id.buttonEnclosure);
 	    buttonControl = (Button)findViewById(R.id.buttonControl);
 	    buttonThermal = (Button)findViewById(R.id.buttonThermal);
@@ -208,6 +237,7 @@ public class Instance extends Activity{
 	    overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	    onDestroy();
 	}
+
 	public void onDestroy() {
 		buttonEnclosure= null;
 	     buttonControl= null;
@@ -220,7 +250,29 @@ public class Instance extends Activity{
 	     buttonAir= null;
 	     buttonLight= null; 
 	     
-		
+	     if(layout !=null){
+	     int x = layout.getScrollX();
+		    int y = layout.getScrollY();
+		    SharedPreferences prefs = getSharedPreferences("savedX", Context.MODE_PRIVATE);
+	    	SharedPreferences.Editor editor4 = prefs.edit();
+	    	editor4.putInt("savedX", x);
+	    	editor4.commit(); //important, otherwise it wouldn't save.
+		    
+	    	    prefs = getSharedPreferences("savedY", Context.MODE_PRIVATE);
+	    	    SharedPreferences.Editor editor5 = prefs.edit();
+		    	editor5.putInt("savedY", y);
+		    	editor5.commit(); //important, otherwise it wouldn't save.
+			    
+		    	if(firstTime){
+			    prefs = getSharedPreferences("firstTime", Context.MODE_PRIVATE);
+		    	SharedPreferences.Editor editor6 = prefs.edit();
+		    	editor6.putBoolean("firstTime", false);
+		    	editor6.commit(); //important, otherwise it wouldn't save.
+		    	}
+	     }
+	     
+	     layout = null;
+		  
 		
 		
 	       super.onDestroy();
