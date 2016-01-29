@@ -72,7 +72,9 @@ public class ItemsActivity extends Activity {
         Dehumidifier= returnSaved("Dehumidifier");
         Mylar_Mirror= returnSaved("Mylar Mirror");
         LED= returnSaved("LED");
-
+        //Enclosure
+        if(Capsule > 0 || Inflatable >0 || Airlock>0)
+        	addToText("------Enclosure------\n");
        if(Capsule > 0){
     	   addToText(Capsule + "x Capsule\n");
        }
@@ -82,14 +84,31 @@ public class ItemsActivity extends Activity {
        if(Airlock>0){
     	   addToText(Airlock + "x Airlock\n");
        }
+       //Control
+       if(Basic > 0 || Premium >0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Control------\n");
+       }
        if(Basic>0){
     	   addToText(Basic + "x Basic\n");
        }
        if(Premium>0){
     	   addToText(Premium + "x Premium\n");
        }
+       //Thermal
        if(Radiator>0){
+    	   
+        	   if(textItems.getText()!="")
+        		   addToText("\n");
+          	addToText("------Thermal------\n");
     	   addToText(Radiator + "x Radiator\n");
+       }
+     //Power
+       if(RTG > 0 || PV_Panel >0 || Battery_Pack>0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Power------\n");
        }
        if(RTG>0){
     	   addToText(RTG + "x RTG\n");
@@ -100,7 +119,12 @@ public class ItemsActivity extends Activity {
        if(Battery_Pack>0){
     	   addToText(Battery_Pack + "x Battery Pack\n");
        }  
-       
+     //AGRI
+       if(Quail > 0 || Aquaponics >0 || Seed_Pack>0 || Vermiculture>0 || Rabbits>0 || BSF_Larvae>0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Agri------\n");
+       }
        if(Quail > 0){
     	   addToText(Quail + "x Quail\n");
        }
@@ -119,11 +143,23 @@ public class ItemsActivity extends Activity {
        if(BSF_Larvae>0){
     	   addToText(BSF_Larvae + "x BSF Larvae\n");
        }
+     //ISRU
+       if(Soil_kiln > 0 || Humidity_Harvester >0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------ISRU------\n");
+       }
        if(Soil_kiln>0){
     	   addToText(Soil_kiln + "x Soil kiln\n");
        }
        if(Humidity_Harvester>0){
     	   addToText(Humidity_Harvester + "x Humidity Harvester\n");
+       }
+       //Crew
+       if(Man > 0 || Woman >0 || Child>0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Crew------\n");
        }
        if(Man>0){
     	   addToText(Man + "x Man\n");
@@ -134,11 +170,23 @@ public class ItemsActivity extends Activity {
        if(Child>0){
     	   addToText(Child + "x Child\n");
        }
+     //Food
+       if(Solar_Oven > 0 || Refrigerator >0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Food------\n");
+       }
        if(Solar_Oven>0){
     	   addToText(Solar_Oven + "x Solar Oven\n");
        }
        if(Refrigerator>0){
     	   addToText(Refrigerator + "x Refrigerator\n");
+       }
+       //Air
+       if(O2_tank > 0 || CO2_tank >0 || Dehumidifier>0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Air------\n");
        }
        if(O2_tank>0){
     	   addToText(O2_tank + "x O2 tank\n");
@@ -148,6 +196,12 @@ public class ItemsActivity extends Activity {
        }
        if(Dehumidifier>0){
     	   addToText(Dehumidifier + "x Dehumidifier\n");
+       }
+     //Light
+       if(Mylar_Mirror > 0 || LED >0){
+    	   if(textItems.getText()!="")
+    		   addToText("\n");
+       	addToText("------Light------\n");
        }
        if(Mylar_Mirror>0){
     	   addToText(Mylar_Mirror + "x Mylar Mirror\n");
