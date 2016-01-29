@@ -1,7 +1,9 @@
 package net.luxser.habsim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface.OnClickListener;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -65,6 +67,22 @@ public class MainActivity extends Activity {
     }
     @Override
     public void onBackPressed() {
+    	  new AlertDialog.Builder(this)
+          .setTitle("Really Exit?")
+          .setMessage("Are you sure you want to exit?")
+          .setNegativeButton("NO", null)
+          .setPositiveButton("YES", new OnClickListener() {
+
+              public void onClick(DialogInterface arg0, int arg1) {
+            	  Intent intent = new Intent(Intent.ACTION_MAIN);
+        		  intent.addCategory(Intent.CATEGORY_HOME);
+        		  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        		  startActivity(intent);
+       	        //overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+         	     
+              }
+          }).create().show();
+    	 
     }
     
     public void onDestroy() {

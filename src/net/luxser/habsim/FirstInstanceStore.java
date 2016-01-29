@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 public class FirstInstanceStore extends Activity {
 	
-	private boolean confirmReset;
 	
 	private boolean Luna;
 	private boolean Moon;
@@ -99,31 +98,13 @@ protected void onCreate(Bundle savedInstanceState) {
 
 	       buttonReset.setOnClickListener(new View.OnClickListener() {
 	     	     public void onClick(View v) {
-	     	    	 if (confirmReset()){
-	     	    	createSaved("Money",3000000);
-	    	    	createSaved("Mass",30000);
-	    	    	
-	    	    	createSaved("Capsule",0);
-	    	    	createSaved("Inflatable",0);
-	    	    	createSaved("Airlock",0);
-	    	    	createSaved("Basic",0);
-	    	    	createSaved("Premium",0);
-	    	    	createSaved("Radiator",0);
-	    	    	createSaved("RTG",0);
-	    	    	createSaved("PV Panel",0);
-	    	    	createSaved("Battery Pack",0);
-	    	    	SharedPreferences prefs = getSharedPreferences("Money", 0);//getPreferences(0);
-	    	        textMoney.setText("Money Left:  $" + NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Money",0)));
-	    	        
-	    	        prefs = getSharedPreferences("Mass", 0);//getPreferences(0);
-	    	        textMass.setText("Mass Left:  " +  NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Mass", 0)) + " kg");
-	     	    	 }
+	     	    	 confirmReset();
+	     	    	 
 	     	     }
 	       });
 	    
 }
-public boolean confirmReset(){
-	confirmReset = false;
+public void confirmReset(){	
 	new AlertDialog.Builder(this)
     .setTitle("Confirm Reset")
     .setMessage("Are you sure you want to remove all purchases?")
@@ -131,27 +112,65 @@ public boolean confirmReset(){
     .setPositiveButton("YES", new OnClickListener() {
 
         public void onClick(DialogInterface arg0, int arg1) {
-        	confirmReset = true;
+
+ 	    	createSaved("Money",3000000);
+	    	createSaved("Mass",30000);
+	    	
+	    	
+	    	//enclosure
+	    	createSaved("Capsule",0);
+	    	createSaved("Inflatable",0);
+	    	createSaved("Airlock",0);
+	    	//control
+	    	createSaved("Basic",0);
+	    	createSaved("Premium",0);
+	    	//thermal
+	    	createSaved("Radiator",0);
+	    	//power
+	    	createSaved("RTG",0);
+	    	createSaved("PV Panel",0);
+	    	createSaved("Battery Pack",0);
+	    	//agri
+	    	createSaved("Quail",0);
+	    	createSaved("Aquaponics",0);
+	    	createSaved("Seed Pack",0);
+	    	createSaved("Vermiculture",0);
+	    	createSaved("Rabbits",0);
+	    	createSaved("BSF Larvae",0);
+	    	//ISRU
+	    	createSaved("Soil kiln",0);
+	    	createSaved("Humidity Harvester",0);
+	    	//Crew
+	    	createSaved("Man",0);
+	    	createSaved("Woman",0);
+	    	createSaved("Child",0);
+	    	//Food
+	    	createSaved("Solar Oven",0);
+	    	createSaved("Refrigerator",0);
+	    	//Air
+	    	createSaved("O2 tank",0);
+	    	createSaved("CO2 tank",0);
+	    	createSaved("Dehumidifier",0);
+	    	//Light
+	    	createSaved("Mylar Mirror",0);
+	    	createSaved("LED",0);
+	    	
+	    	SharedPreferences prefs = getSharedPreferences("Money", 0);//getPreferences(0);
+	        textMoney.setText("Money Left:  $" + NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Money",0)));
+	        
+	        prefs = getSharedPreferences("Mass", 0);//getPreferences(0);
+	        textMass.setText("Mass Left:  " +  NumberFormat.getNumberInstance(Locale.US).format(prefs.getInt("Mass", 0)) + " kg");
         }
        
     }).create().show();
-	return confirmReset;
 }
 @Override
 public void onBackPressed() {
-    new AlertDialog.Builder(this)
-        .setTitle("Really Exit?")
-        .setMessage("Are you sure you want to exit?")
-        .setNegativeButton("NO", null)
-        .setPositiveButton("YES", new OnClickListener() {
-
-            public void onClick(DialogInterface arg0, int arg1) {
             	final Intent i = new Intent(FirstInstanceStore.this,MainActivity.class);
     	        startActivity(i);
        	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
        	     onDestroy();
-            }
-        }).create().show();
+           
 }
 public void onDestroy() {
 	textMoney = null;
