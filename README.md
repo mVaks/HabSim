@@ -1,1 +1,1 @@
-# gregproj
+# HabSim, an educational simulator for a closed environmental life support system
