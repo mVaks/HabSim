@@ -16,7 +16,7 @@
 
      <TextView
               			android:layout_gravity="bottom"
-         
+         		
                android:id="@+id/textMass"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -28,6 +28,7 @@
         
 
             <Gallery
+                android:paddingTop="70dp"
                 android:layout_alignParentLeft="true"
                 android:id="@+id/gallery1"
                 android:layout_gravity="top"

@@ -38,9 +38,9 @@ public class EnclosureActivity extends Activity {
 	
 	//the images to display
 	Integer[] imageIDs = {
-	R.drawable.indian,
-	R.drawable.indian,
-	R.drawable.indian,
+	R.drawable.capsule,
+	R.drawable.capsule,
+	R.drawable.capsule,
 	};
 	public void run() {
 		
