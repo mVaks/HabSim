@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mp = MediaPlayer.create(MainActivity.this, R.raw.makingwater);
+        //start music
         mp.start();
         buttonLaunchNew = (Button) findViewById(R.id.buttonLaunchNew);
         buttonLoadMission = (Button) findViewById(R.id.buttonLoadMission);
